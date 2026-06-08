@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Dana Krystelle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet">
+<style>
+/* ════════════ DANA KRYSTELLE — SHARED STYLES ════════════ */
+
+:root {
+  --salem: #161415;
+  --blood: #6c0e33;
+  --blood-deep: #500824;
+  --water: #7398af;
+  --coffee: #c48856;
+  --coffee-soft: #d9a880;
+  --linen: #faf3e3;
+  --linen-deep: #f0e8d2;
+  --linen-cream: #fdf9ef;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+  --script: 'Allura', cursive;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--linen);
+  color: var(--salem);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+/* ════════════ ANNOUNCEMENT BAR ════════════ */
+.announce {
+  background: var(--blood);
+  color: var(--linen);
+  text-align: center;
+  padding: 0.55rem 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.announce a {
+  color: var(--linen);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ════════════ NAV ════════════ */
+nav {
+  background: var(--linen);
+  padding: 1.4rem 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(22, 20, 21, 0.06);
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--salem);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-link:hover { color: var(--blood); }
+.nav-link.active { color: var(--blood); }
+
+.nav-logo {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--blood);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.nav-logo .diamond {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--blood);
+  margin: 0 0.3rem;
+  transform: rotate(45deg);
+  vertical-align: middle;
+  margin-bottom: 4px;
+}
+
+@media(max-width: 900px) {
+  .nav-left, .nav-right { gap: 1rem; }
+  .nav-link { font-size: 0.65rem; }
+  .nav-logo { font-size: 1.1rem; }
+}
+
+/* ════════════ BUTTONS ════════════ */
+.btn {
+  font-family: var(--sans);
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.25s;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--blood);
+  color: var(--linen);
+}
+.btn-primary:hover { background: var(--blood-deep); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--salem);
+  border-color: var(--salem);
+}
+.btn-outline:hover { background: var(--salem); color: var(--linen); }
+
+.btn-coffee {
+  background: var(--coffee);
+  color: var(--linen);
+}
+.btn-coffee:hover { background: #a76a3e; }
+
+/* ════════════ SECTION ELEMENTS ════════════ */
+.section-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--coffee);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* ════════════ PAGE HEADER (Sub-pages) ════════════ */
+.page-header {
+  background: var(--linen);
+  padding: 5rem 5vw 4rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(22, 20, 21, 0.06);
+}
+
+.page-header .eyebrow {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--coffee);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.page-header h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  color: var(--salem);
+  margin-bottom: 1rem;
+}
+
+.page-header h1 .script {
+  font-family: var(--script);
+  color: var(--blood);
+  font-weight: 400;
+  font-size: 1.15em;
+}
+
+.page-header p {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  color: var(--salem);
+  opacity: 0.7;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ════════════ NEWSLETTER ════════════ */
+.newsletter {
+  background: var(--blood);
+  color: var(--linen);
+  padding: 6rem 5vw;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter::before, .newsletter::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(196, 136, 86, 0.15), transparent 70%);
+  border-radius: 50%;
+}
+.newsletter::before { top: -100px; left: -100px; }
+.newsletter::after { bottom: -100px; right: -100px; }
+
+.newsletter-content {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.newsletter-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--coffee-soft);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.newsletter h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin-bottom: 0.8rem;
+}
+
+.newsletter h2 .script {
+  font-family: var(--script);
+  color: var(--coffee-soft);
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+.newsletter p {
+  font-size: 1rem;
+  opacity: 0.8;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.6rem;
+  max-width: 480px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.newsletter-input {
+  flex: 1;
+  min-width: 240px;
+  padding: 1rem 1.4rem;
+  background: var(--linen);
+  border: none;
+  color: var(--salem);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+.newsletter-input::placeholder { color: rgba(22, 20, 21, 0.45); }
+.newsletter-input:focus { outline: 2px solid var(--coffee); outline-offset: 2px; }
+
+.newsletter-btn {
+  background: var(--coffee);
+  color: var(--linen);
+  border: none;
+  padding: 1rem 2rem;
+  font-family: var(--sans);
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.newsletter-btn:hover { background: #a76a3e; }
+
+.newsletter-note {
+  font-size: 0.75rem;
+  margin-top: 1.2rem;
+  opacity: 0.6;
+  font-style: italic;
+  font-family: var(--serif);
+}
+
+/* ════════════ FOOTER ════════════ */
+footer {
+  background: var(--salem);
+  color: var(--linen);
+  padding: 5rem 5vw 2rem;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+.footer-brand h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--linen);
+  margin-bottom: 1rem;
+}
+
+.footer-brand h3 .script {
+  font-family: var(--script);
+  color: var(--coffee-soft);
+  font-weight: 400;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  line-height: 1.7;
+  max-width: 360px;
+  margin-bottom: 1.2rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.footer-social a {
+  width: 38px;
+  height: 38px;
+  background: rgba(250, 243, 227, 0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--linen);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+.footer-social a:hover { background: var(--blood); }
+
+.footer-col h4 {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  color: var(--coffee-soft);
+}
+
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.7rem; }
+.footer-col a {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  color: var(--linen);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.footer-col a:hover { opacity: 1; color: var(--coffee-soft); }
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(250, 243, 227, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.78rem;
+  opacity: 0.6;
+}
+
+.footer-bottom .credit {
+  font-family: var(--serif);
+  font-style: italic;
+}
+
+@media(max-width: 900px) {
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+@media(max-width: 600px) {
+  .footer-top { grid-template-columns: 1fr; }
+}
+
+/* ════════════ FADE-UP ANIMATION ════════════ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: none;
+}
+
+</style>
+<style>
+.about-intro {
+  background: var(--linen);
+  padding: 5rem 5vw;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: center;
+}
+.about-photo {
+  position: relative;
+  aspect-ratio: 4/5;
+}
+.about-photo-bg {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--blood), var(--blood-deep));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--script);
+  font-size: 6rem;
+  color: rgba(250, 243, 227, 0.4);
+  border-radius: 4px;
+}
+.about-photo::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: -20px;
+  bottom: -20px;
+  border: 1.5px solid var(--coffee);
+  border-radius: 4px;
+  z-index: -1;
+}
+.about-text h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.about-text h2 .script {
+  font-family: var(--script);
+  color: var(--blood);
+  font-weight: 400;
+  font-size: 1.1em;
+}
+.about-text p {
+  font-size: 1rem;
+  color: var(--salem);
+  opacity: 0.78;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+@media(max-width: 900px) {
+  .about-intro { grid-template-columns: 1fr; gap: 3rem; padding: 3rem 5vw; }
+  .about-photo { max-width: 380px; }
+  .about-photo::before { display: none; }
+}
+
+.edge-callout {
+  background: var(--blood);
+  color: var(--linen);
+  padding: 6rem 5vw;
+  text-align: center;
+}
+.edge-callout-quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  line-height: 1.4;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.edge-callout-attr {
+  font-family: var(--script);
+  font-size: 2rem;
+  color: var(--coffee-soft);
+  margin-top: 1.5rem;
+}
+
+.stats {
+  background: var(--linen-cream);
+  padding: 5rem 5vw;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+.stat {
+  background: var(--linen);
+  padding: 2.5rem 1rem;
+  border-radius: 4px;
+}
+.stat-num {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 3rem;
+  color: var(--blood);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.stat-label {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--salem);
+  font-weight: 600;
+  opacity: 0.75;
+}
+@media(max-width: 700px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.skills {
+  background: var(--linen);
+  padding: 6rem 5vw;
+  text-align: center;
+}
+.skills h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  margin-bottom: 0.5rem;
+}
+.skills h2 .script {
+  font-family: var(--script);
+  color: var(--blood);
+  font-weight: 400;
+  font-size: 1.2em;
+}
+.skills-intro {
+  font-size: 0.95rem;
+  color: var(--salem);
+  opacity: 0.7;
+  max-width: 540px;
+  margin: 0 auto 2.5rem;
+}
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.skill-tag {
+  background: var(--linen-cream);
+  border: 1px solid rgba(22, 20, 21, 0.1);
+  padding: 0.6rem 1.2rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--salem);
+  border-radius: 100px;
+}
+</style>
+</head>
+<body>
+
+<div class="announce">
+  ✦ &nbsp; Currently booking content partnerships for Q3 2026 &nbsp; ✦ &nbsp; <a href="contact.html">Get in touch →</a>
+</div>
+
+<nav>
+  <div class="nav-left">
+    <a href="work.html" class="nav-link">Work</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="speaking.html" class="nav-link">Speaking</a>
+  </div>
+  <a href="index.html" class="nav-logo">Dana<span class="diamond"></span>Krystelle</a>
+  <div class="nav-right">
+    <a href="teaching.html" class="nav-link">Resources</a>
+    <a href="about.html" class="nav-link active">About</a>
+    <a href="contact.html" class="nav-link">Connect</a>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="eyebrow">✦ &nbsp; About Dana &nbsp; ✦</div>
+  <h1>Hi, I'm <span class="script">Dana.</span></h1>
+  <p>A creator obsessed with the big in the little — and the woman behind the brand.</p>
+</section>
+
+<section class="about-intro">
+  <div class="about-photo">
+    <div class="about-photo-bg">DK</div>
+  </div>
+  <div class="about-text fade-up">
+    <h2>The girl who found <span class="script">her thing.</span></h2>
+    <p>For 7+ years, I've been chasing one question: <em>What if the thing you already have is actually enough?</em></p>
+    <p>I started where most creators start — with too much heart and not enough resources. No fancy gear. No big budgets. Just a deep belief that there's more in raw moments than people give them credit for.</p>
+    <p>That belief became my craft. Today I work as a creative director, video editor, and scriptwriter for creators, brands, and ministries — helping them see and tell the story that was already there.</p>
+    <p>And because I learned the hard way, I teach too. Workshops, keynotes, mentorships — wherever someone is trying to figure out their next step in this creative life, I want to be a voice that says: <em>you already have what you need.</em></p>
+  </div>
+</section>
+
+<section class="edge-callout">
+  <p class="edge-callout-quote">"I create something big out of something little. Give me raw footage, scattered ideas, limited resources — I'll turn them into stories that speak."</p>
+  <div class="edge-callout-attr">— Dana</div>
+</section>
+
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat fade-up">
+      <div class="stat-num">7+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat fade-up">
+      <div class="stat-num">120+</div>
+      <div class="stat-label">Projects Delivered</div>
+    </div>
+    <div class="stat fade-up">
+      <div class="stat-num">40+</div>
+      <div class="stat-label">Happy Clients</div>
+    </div>
+    <div class="stat fade-up">
+      <div class="stat-num">10+</div>
+      <div class="stat-label">Speaking Events</div>
+    </div>
+  </div>
+</section>
+
+<section class="skills">
+  <h2>Skills & <span class="script">tools.</span></h2>
+  <p class="skills-intro">The tools I use daily to bring big stories out of little moments.</p>
+  <div class="skills-tags">
+    <div class="skill-tag">Adobe Premiere Pro</div>
+    <div class="skill-tag">DaVinci Resolve</div>
+    <div class="skill-tag">After Effects</div>
+    <div class="skill-tag">Final Cut Pro</div>
+    <div class="skill-tag">Audition</div>
+    <div class="skill-tag">Frame.io</div>
+    <div class="skill-tag">Creative Direction</div>
+    <div class="skill-tag">Scriptwriting</div>
+    <div class="skill-tag">Color Grading</div>
+    <div class="skill-tag">Motion Graphics</div>
+    <div class="skill-tag">Content Strategy</div>
+    <div class="skill-tag">Public Speaking</div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="newsletter-content">
+    <div class="newsletter-eyebrow">✦ &nbsp; Let's Work Together &nbsp; ✦</div>
+    <h2>Ready to <span class="script">create something big?</span></h2>
+    <p>Whether you need a creative partner, a video editor, a scriptwriter, or someone to speak at your event — I'd love to hear about your project.</p>
+    <div style="margin-top: 2rem;">
+      <a href="contact.html" class="btn btn-coffee">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h3>Dana <span class="script">Krystelle</span></h3>
+      <p>Creative Direction · Video Editing · Scriptwriting · Speaking · Teaching. Based in Manila, working globally.</p>
+      <div class="footer-social">
+        <a href="#">IG</a><a href="#">YT</a><a href="#">TT</a><a href="#">in</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="speaking.html">Speaking</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="teaching.html">Free Resources</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">YouTube</a></li>
+        <li><a href="#">Newsletter</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:dana@danakrystelle.com">Email</a></li>
+        <li><a href="contact.html">Book a Call</a></li>
+        <li><a href="speaking.html">Speaking</a></li>
+        <li><a href="#">Press Kit</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Dana Krystelle. All rights reserved.</span>
+    <span class="credit">Brand by Dana Krystelle · Site by KAL Studio</span>
+  </div>
+</footer>
+
+<script>
+// Fade-up on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+</script>
+</body>
+</html>

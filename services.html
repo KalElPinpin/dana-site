@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Dana Krystelle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet">
+<style>
+/* ════════════ DANA KRYSTELLE — SHARED STYLES ════════════ */
+
+:root {
+  --salem: #161415;
+  --blood: #6c0e33;
+  --blood-deep: #500824;
+  --water: #7398af;
+  --coffee: #c48856;
+  --coffee-soft: #d9a880;
+  --linen: #faf3e3;
+  --linen-deep: #f0e8d2;
+  --linen-cream: #fdf9ef;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+  --script: 'Allura', cursive;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--linen);
+  color: var(--salem);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+/* ════════════ ANNOUNCEMENT BAR ════════════ */
+.announce {
+  background: var(--blood);
+  color: var(--linen);
+  text-align: center;
+  padding: 0.55rem 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.announce a {
+  color: var(--linen);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ════════════ NAV ════════════ */
+nav {
+  background: var(--linen);
+  padding: 1.4rem 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(22, 20, 21, 0.06);
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--salem);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-link:hover { color: var(--blood); }
+.nav-link.active { color: var(--blood); }
+
+.nav-logo {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--blood);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.nav-logo .diamond {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--blood);
+  margin: 0 0.3rem;
+  transform: rotate(45deg);
+  vertical-align: middle;
+  margin-bottom: 4px;
+}
+
+@media(max-width: 900px) {
+  .nav-left, .nav-right { gap: 1rem; }
+  .nav-link { font-size: 0.65rem; }
+  .nav-logo { font-size: 1.1rem; }
+}
+
+/* ════════════ BUTTONS ════════════ */
+.btn {
+  font-family: var(--sans);
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.25s;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--blood);
+  color: var(--linen);
+}
+.btn-primary:hover { background: var(--blood-deep); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--salem);
+  border-color: var(--salem);
+}
+.btn-outline:hover { background: var(--salem); color: var(--linen); }
+
+.btn-coffee {
+  background: var(--coffee);
+  color: var(--linen);
+}
+.btn-coffee:hover { background: #a76a3e; }
+
+/* ════════════ SECTION ELEMENTS ════════════ */
+.section-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--coffee);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* ════════════ PAGE HEADER (Sub-pages) ════════════ */
+.page-header {
+  background: var(--linen);
+  padding: 5rem 5vw 4rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(22, 20, 21, 0.06);
+}
+
+.page-header .eyebrow {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--coffee);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.page-header h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  color: var(--salem);
+  margin-bottom: 1rem;
+}
+
+.page-header h1 .script {
+  font-family: var(--script);
+  color: var(--blood);
+  font-weight: 400;
+  font-size: 1.15em;
+}
+
+.page-header p {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  color: var(--salem);
+  opacity: 0.7;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ════════════ NEWSLETTER ════════════ */
+.newsletter {
+  background: var(--blood);
+  color: var(--linen);
+  padding: 6rem 5vw;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter::before, .newsletter::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(196, 136, 86, 0.15), transparent 70%);
+  border-radius: 50%;
+}
+.newsletter::before { top: -100px; left: -100px; }
+.newsletter::after { bottom: -100px; right: -100px; }
+
+.newsletter-content {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.newsletter-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--coffee-soft);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.newsletter h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin-bottom: 0.8rem;
+}
+
+.newsletter h2 .script {
+  font-family: var(--script);
+  color: var(--coffee-soft);
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+.newsletter p {
+  font-size: 1rem;
+  opacity: 0.8;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.6rem;
+  max-width: 480px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.newsletter-input {
+  flex: 1;
+  min-width: 240px;
+  padding: 1rem 1.4rem;
+  background: var(--linen);
+  border: none;
+  color: var(--salem);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+.newsletter-input::placeholder { color: rgba(22, 20, 21, 0.45); }
+.newsletter-input:focus { outline: 2px solid var(--coffee); outline-offset: 2px; }
+
+.newsletter-btn {
+  background: var(--coffee);
+  color: var(--linen);
+  border: none;
+  padding: 1rem 2rem;
+  font-family: var(--sans);
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.newsletter-btn:hover { background: #a76a3e; }
+
+.newsletter-note {
+  font-size: 0.75rem;
+  margin-top: 1.2rem;
+  opacity: 0.6;
+  font-style: italic;
+  font-family: var(--serif);
+}
+
+/* ════════════ FOOTER ════════════ */
+footer {
+  background: var(--salem);
+  color: var(--linen);
+  padding: 5rem 5vw 2rem;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+.footer-brand h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--linen);
+  margin-bottom: 1rem;
+}
+
+.footer-brand h3 .script {
+  font-family: var(--script);
+  color: var(--coffee-soft);
+  font-weight: 400;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  line-height: 1.7;
+  max-width: 360px;
+  margin-bottom: 1.2rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.footer-social a {
+  width: 38px;
+  height: 38px;
+  background: rgba(250, 243, 227, 0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--linen);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+.footer-social a:hover { background: var(--blood); }
+
+.footer-col h4 {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  color: var(--coffee-soft);
+}
+
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.7rem; }
+.footer-col a {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  color: var(--linen);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.footer-col a:hover { opacity: 1; color: var(--coffee-soft); }
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(250, 243, 227, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.78rem;
+  opacity: 0.6;
+}
+
+.footer-bottom .credit {
+  font-family: var(--serif);
+  font-style: italic;
+}
+
+@media(max-width: 900px) {
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+@media(max-width: 600px) {
+  .footer-top { grid-template-columns: 1fr; }
+}
+
+/* ════════════ FADE-UP ANIMATION ════════════ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: none;
+}
+
+</style>
+<style>
+.service-block {
+  padding: 6rem 5vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.service-block.reverse .service-visual { order: 2; }
+.service-block.reverse .service-text { order: 1; }
+
+.service-block:nth-child(odd) { background: var(--linen); }
+.service-block:nth-child(even) { background: var(--linen-cream); }
+
+.service-visual {
+  aspect-ratio: 4/5;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 5rem;
+  color: rgba(250, 243, 227, 0.4);
+}
+.sv1 { background: linear-gradient(135deg, var(--blood), var(--blood-deep)); }
+.sv2 { background: linear-gradient(135deg, var(--coffee), var(--coffee-soft)); }
+.sv3 { background: linear-gradient(135deg, var(--water), #4d6e8a); }
+
+.service-text {
+  max-width: 540px;
+}
+
+.service-num-large {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 5rem;
+  color: var(--coffee);
+  line-height: 1;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.service-text h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--salem);
+}
+
+.service-text h2 .script {
+  font-family: var(--script);
+  color: var(--blood);
+  font-weight: 400;
+  font-size: 1.15em;
+}
+
+.service-text p {
+  font-size: 1rem;
+  color: var(--salem);
+  opacity: 0.78;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.service-list {
+  list-style: none;
+  margin: 1.5rem 0 2rem;
+}
+.service-list li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(22, 20, 21, 0.08);
+  font-size: 0.92rem;
+  font-family: var(--sans);
+  color: var(--salem);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.service-list li:last-child { border-bottom: none; }
+.service-list li::before {
+  content: '✦';
+  color: var(--coffee);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+@media(max-width: 900px) {
+  .service-block { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 5vw; }
+  .service-block.reverse .service-visual { order: 0; }
+  .service-block.reverse .service-text { order: 0; }
+  .service-visual { max-width: 380px; margin: 0 auto; }
+}
+
+.process-section {
+  background: var(--linen-deep);
+  padding: 6rem 5vw;
+  text-align: center;
+}
+.process-header { margin-bottom: 3rem; }
+.process-header h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+.process-header h2 .script {
+  font-family: var(--script);
+  color: var(--blood);
+  font-weight: 400;
+  font-size: 1.2em;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.process-step {
+  background: var(--linen);
+  padding: 2rem 1.5rem;
+  border-radius: 4px;
+  text-align: center;
+}
+.process-step-num {
+  font-family: var(--script);
+  font-size: 2.5rem;
+  color: var(--blood);
+  line-height: 1;
+  margin-bottom: 0.8rem;
+}
+.process-step h4 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+.process-step p {
+  font-size: 0.82rem;
+  color: var(--salem);
+  opacity: 0.7;
+  line-height: 1.6;
+}
+@media(max-width: 900px) { .process-grid { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+
+<div class="announce">
+  ✦ &nbsp; Currently booking content partnerships for Q3 2026 &nbsp; ✦ &nbsp; <a href="contact.html">Get in touch →</a>
+</div>
+
+<nav>
+  <div class="nav-left">
+    <a href="work.html" class="nav-link">Work</a>
+    <a href="services.html" class="nav-link active">Services</a>
+    <a href="speaking.html" class="nav-link">Speaking</a>
+  </div>
+  <a href="index.html" class="nav-logo">Dana<span class="diamond"></span>Krystelle</a>
+  <div class="nav-right">
+    <a href="teaching.html" class="nav-link">Resources</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link">Connect</a>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="eyebrow">✦ &nbsp; Services &nbsp; ✦</div>
+  <h1>Let's create <span class="script">together.</span></h1>
+  <p>Three ways I help creators, brands, and ministries turn what they already have into something meaningful.</p>
+</section>
+
+<section class="service-block">
+  <div class="service-visual sv1">01</div>
+  <div class="service-text fade-up">
+    <div class="service-num-large">01</div>
+    <h2>Creative <span class="script">Direction.</span></h2>
+    <p>Strategy, content planning, and brand voice for creators who want clarity and direction. I help shape the big picture — your vision, your message, your roadmap.</p>
+    <ul class="service-list">
+      <li>Content strategy & planning</li>
+      <li>Brand voice development</li>
+      <li>Editorial calendars</li>
+      <li>Platform optimization</li>
+      <li>Audience growth roadmaps</li>
+    </ul>
+    <a href="contact.html" class="btn btn-primary">Let's Build Your Vision</a>
+  </div>
+</section>
+
+<section class="service-block reverse">
+  <div class="service-visual sv2">02</div>
+  <div class="service-text fade-up">
+    <div class="service-num-large">02</div>
+    <h2>Video <span class="script">Editing.</span></h2>
+    <p>Post-production craft for YouTubers, brands, and ministries — color grading, pacing, sound design, and motion graphics that elevate raw footage into story.</p>
+    <ul class="service-list">
+      <li>Long-form YouTube videos</li>
+      <li>Short-form (Reels, TikTok, Shorts)</li>
+      <li>Color grading & finishing</li>
+      <li>Sound design & mixing</li>
+      <li>Motion graphics & titles</li>
+    </ul>
+    <a href="contact.html" class="btn btn-coffee">Let's Edit Your Story</a>
+  </div>
+</section>
+
+<section class="service-block">
+  <div class="service-visual sv3">03</div>
+  <div class="service-text fade-up">
+    <div class="service-num-large">03</div>
+    <h2>Script <span class="script">writing.</span></h2>
+    <p>Words that move and structure that sells — video scripts, hooks, narration, and emotional arcs written with heart and intention.</p>
+    <ul class="service-list">
+      <li>YouTube video scripts</li>
+      <li>Short-form hooks & captions</li>
+      <li>Brand storytelling</li>
+      <li>Narration & voiceover</li>
+      <li>Ad copy & CTAs</li>
+    </ul>
+    <a href="contact.html" class="btn btn-primary">Let's Write Your Script</a>
+  </div>
+</section>
+
+<section class="process-section">
+  <div class="process-header">
+    <div class="section-eyebrow">✦ &nbsp; How We Work Together &nbsp; ✦</div>
+    <h2>The <span class="script">process.</span></h2>
+  </div>
+  <div class="process-grid">
+    <div class="process-step fade-up">
+      <div class="process-step-num">i.</div>
+      <h4>Discovery</h4>
+      <p>We chat through your vision, goals, audience, and what you already have to work with.</p>
+    </div>
+    <div class="process-step fade-up">
+      <div class="process-step-num">ii.</div>
+      <h4>Strategy</h4>
+      <p>I map out a clear plan — direction, deliverables, timeline, and benchmarks.</p>
+    </div>
+    <div class="process-step fade-up">
+      <div class="process-step-num">iii.</div>
+      <h4>Execution</h4>
+      <p>The fun part — I bring the vision to life with regular check-ins and collaborative review.</p>
+    </div>
+    <div class="process-step fade-up">
+      <div class="process-step-num">iv.</div>
+      <h4>Delivery</h4>
+      <p>Final files handed off, ready to publish — plus post-launch support if you need it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="newsletter-content">
+    <div class="newsletter-eyebrow">✦ &nbsp; Ready to Begin? &nbsp; ✦</div>
+    <h2>Let's get <span class="script">started.</span></h2>
+    <p>Send me a note about your project — I'll get back to you within 24-48 hours with a personalized proposal.</p>
+    <div style="margin-top: 2rem;">
+      <a href="contact.html" class="btn btn-coffee">Start Your Project</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h3>Dana <span class="script">Krystelle</span></h3>
+      <p>Creative Direction · Video Editing · Scriptwriting · Speaking · Teaching. Based in Manila, working globally.</p>
+      <div class="footer-social"><a href="#">IG</a><a href="#">YT</a><a href="#">TT</a><a href="#">in</a></div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="speaking.html">Speaking</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="teaching.html">Free Resources</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">YouTube</a></li>
+        <li><a href="#">Newsletter</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:dana@danakrystelle.com">Email</a></li>
+        <li><a href="contact.html">Book a Call</a></li>
+        <li><a href="speaking.html">Speaking</a></li>
+        <li><a href="#">Press Kit</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Dana Krystelle. All rights reserved.</span>
+    <span class="credit">Brand by Dana Krystelle · Site by KAL Studio</span>
+  </div>
+</footer>
+
+<script>
+// Fade-up on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+</script>
+</body>
+</html>
