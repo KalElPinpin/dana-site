@@ -429,44 +429,6 @@ footer {
 
 
 
-
-/* ── CUSTOM CURSOR ── */
-*, *::before, *::after { cursor: none !important; }
-#cursor-ring {
-  position: fixed;
-  width: 36px; height: 36px;
-  border: 2px solid var(--coffee);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99999;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s cubic-bezier(.25,.46,.45,.94),
-              height 0.2s cubic-bezier(.25,.46,.45,.94),
-              border-color 0.2s ease,
-              background 0.2s ease,
-              opacity 0.15s ease;
-  opacity: 0;
-}
-#cursor-dot {
-  position: fixed;
-  width: 7px; height: 7px;
-  background: var(--blood);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 100000;
-  transform: translate(-50%, -50%);
-  transition: width 0.15s ease, height 0.15s ease, background 0.15s ease, opacity 0.15s ease;
-  opacity: 0;
-}
-body.cursor-hover #cursor-ring {
-  width: 48px; height: 48px;
-  border-color: var(--blood);
-  background: rgba(108,14,51,0.08);
-}
-body.cursor-hover #cursor-dot {
-  width: 5px; height: 5px;
-  background: var(--coffee);
-}
 </style>
 <style>
 .work-section {
@@ -652,8 +614,6 @@ body.cursor-hover #cursor-dot {
 </style>
 </head>
 <body>
-<div id="cursor-ring"></div>
-<div id="cursor-dot"></div>
 <div class="announce">
   ✦ &nbsp; Currently booking content partnerships for Q3 2026 &nbsp; ✦ &nbsp; <a href="contact.html">Get in touch →</a>
 </div>
@@ -855,70 +815,6 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-</script>
-<script>
-
-  document.addEventListener('mouseover', function(e) {
-    if (e.target.closest('a,button,[role="button"],input,textarea,select,.btn'))
-      document.body.classList.add('cursor-hover');
-  });
-  document.addEventListener('mouseout', function(e) {
-    if (e.target.closest('a,button,[role="button"],input,textarea,select,.btn'))
-      document.body.classList.remove('cursor-hover');
-  });
-  document.addEventListener('mouseleave', function() { el.style.opacity = '0'; });
-  document.addEventListener('mouseenter', function() { el.style.opacity = '1'; });
-})();
-<script>
-
-  // Hover state
-  document.addEventListener('mouseover', function(e) {
-    if (e.target.closest('a, button, [role="button"], input, textarea, select, .btn')) {
-      document.body.classList.add('cursor-hover');
-    }
-  });
-  document.addEventListener('mouseout', function(e) {
-    if (e.target.closest('a, button, [role="button"], input, textarea, select, .btn')) {
-      document.body.classList.remove('cursor-hover');
-    }
-  });
-})();
-<script>
-// Custom cursor
-(function() {
-  var ring = document.getElementById('cursor-ring');
-  var dot  = document.getElementById('cursor-dot');
-  if (!ring || !dot) return;
-  var mx = 0, my = 0, rx = 0, ry = 0, raf;
-  function lerp(a, b, t) { return a + (b - a) * t; }
-  function tick() {
-    rx = lerp(rx, mx, 0.18);
-    ry = lerp(ry, my, 0.18);
-    ring.style.left = rx + 'px';
-    ring.style.top  = ry + 'px';
-    raf = requestAnimationFrame(tick);
-  }
-  document.addEventListener('mousemove', function(e) {
-    mx = e.clientX; my = e.clientY;
-    dot.style.left = mx + 'px';
-    dot.style.top  = my + 'px';
-    ring.style.opacity = '1';
-    dot.style.opacity  = '1';
-    if (!raf) tick();
-  });
-  document.addEventListener('mouseleave', function() {
-    ring.style.opacity = '0';
-    dot.style.opacity  = '0';
-  });
-  document.addEventListener('mouseover', function(e) {
-    if (e.target.closest('a,button,[role="button"],input,textarea,select,.btn'))
-      document.body.classList.add('cursor-hover');
-  });
-  document.addEventListener('mouseout', function(e) {
-    if (e.target.closest('a,button,[role="button"],input,textarea,select,.btn'))
-      document.body.classList.remove('cursor-hover');
-  });
-})();
 </script>
 </body>
 </html>
