@@ -897,11 +897,27 @@ footer {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding: 2rem;
+  padding: 14px;
   font-family: var(--script);
   color: var(--linen);
   font-size: 2rem;
   position: relative;
+  overflow: hidden;
+}
+.speaker-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+.speaker-photo span {
+  position: absolute;
+  left: 50%;
+  bottom: 1.6rem;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
 }
 @media(max-width: 900px) {
   .speaker-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -1054,7 +1070,7 @@ footer {
       </ul>
       <a href="speaking.html" class="btn btn-coffee">Book Me to Speak</a>
     </div>
-    <div class="speaker-photo">Dana on stage</div>
+    <div class="speaker-photo"><img src="images/dana-teaching.png" alt="Dana Krystelle speaking on stage"><span class="script">Dana on stage</span></div>
   </div>
 </section>
 
@@ -1079,7 +1095,7 @@ footer {
       <h3>Dana <span class="script">Krystelle</span></h3>
       <p>Creative Direction · Video Editing · Scriptwriting · Speaking · Teaching. Based in Manila, working globally.</p>
       <div class="footer-social">
-        <a href="#">IG</a><a href="#">YT</a><a href="#">TT</a><a href="#">in</a>
+        <a href="https://www.instagram.com/danakrystelle/" target="_blank" rel="noopener">IG</a><a href="https://www.youtube.com/@danakrystelleyt" target="_blank" rel="noopener">YT</a><a href="https://www.tiktok.com/@dana.krystelle" target="_blank" rel="noopener">TT</a><a href="https://www.linkedin.com/in/danakrystelle/" target="_blank" rel="noopener">in</a>
       </div>
     </div>
     <div class="footer-col">
